@@ -1,15 +1,15 @@
 const canvasBox = document.querySelector(".canvasBox")
-canvasBox.style.display = "flex";
 
-function setCanvas(){
-    for (let i = 0; i < 16; i++){
-        const canvasItem = document.createElement("div");
-        canvasItem.style.border = "solid";
-        canvasItem.style.width = "50px";
-        canvasItem.style.height = "50px";
-        canvasItem.classList.add("canvasItem")
-        canvasBox.appendChild(canvasItem);
-    }
+function setCanvas(rows, columns){
+    let rowCount = 0;
+    while (rowCount < rows){
+        for (let i = 0; i < columns; i++){
+            const canvasItem = document.createElement("div");
+            canvasItem.classList.add("canvasItem")
+            canvasBox.appendChild(canvasItem);
+        }
+        rowCount++;
+    }   
 }
 
-setCanvas();
+setCanvas(16, 16);

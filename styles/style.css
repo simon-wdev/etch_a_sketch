@@ -1,0 +1,13 @@
+.canvasItem{
+    box-sizing: border-box;
+    border: solid, black;
+    height: 50px;
+    width: 50px;
+}
+
+.canvasBox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 800px;
+}
