@@ -1,13 +1,25 @@
 const canvasBox = document.querySelector(".canvasBox");
 const canvasItem = document.querySelector(".canvasItem")
+const resetBtn = document.querySelector(".resetBtn")
 
-let grid = 16;
+let grid;
 let columns = grid;
 let rows = grid;
-setSize();
+setStandard();
 
+function setStandard(){
+    getWidth(16,16);
+    setCanvas(16,16);
+}
+
+resetBtn.addEventListener("click", (e)=>{   
+    e.preventDefault();
+    canvasBox.innerHTML = "";
+    setSize(grid = prompt("Choose a size between 1 and 100."));
+});
 
 function setSize(){
+    grid = parseInt(grid, 10);
     if (grid>100){
         alert("100 is max! Grid will be set to max.");
         setCanvas(100, 100);
@@ -25,6 +37,7 @@ function getWidth(rows, columns){
 }
 
 function setCanvas(rows, columns){
+
     let rowCount = 0;
     while (rowCount < rows){    //mcreates the rows
         for (let i = 0; i < columns; i++){  //creates the columns

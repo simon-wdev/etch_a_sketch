@@ -21,3 +21,8 @@ body{
 h1{
     text-align: center;
 }
+
+.resetBtn{
+    margin: 30px;
+    padding: 10px;
+}
